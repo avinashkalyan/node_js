@@ -2,6 +2,7 @@ var express=require('express');
 var hbs=require('hbs');
 var fs=require('fs');
 var app=express();
+var port = process.env.PORT || 9000;
 console.log(__dirname);
 
 hbs.registerPartials(__dirname+"/views/partials");//this is for footer like templates..directory of that mentioned here
@@ -49,8 +50,8 @@ app.get("/loginPage",(req,res)=>{
   });
 })
 
-app.listen(9000,()=>{
+app.listen(port,()=>{
   //this callback function once server ready shows this message
   //if you run server.js on nodemon ..no need to restart automatically changes get reflected as nodeman keeps restarting
-  console.log("server started at port 9000");
+  console.log(`server started on the port ${port}`);
 })
