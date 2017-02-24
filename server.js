@@ -55,3 +55,7 @@ app.listen(port,()=>{
   //if you run server.js on nodemon ..no need to restart automatically changes get reflected as nodeman keeps restarting
   console.log(`server started on the port ${port}`);
 })
+
+module.exports={
+  app
+}

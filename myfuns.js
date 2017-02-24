@@ -2,8 +2,19 @@ const fs=require('fs');//used const instead of var as this won't be changed agai
 var sum=function(arg1,arg2){
   return arg1+arg2;
 }
-var subtract=function(arg1,arg2){
-  return arg1-arg2;
+
+var sumSync=function(arg1,arg2,callback){
+  setTimeout(()=>{
+    callback(arg1+arg2);
+  },1000);
+}
+
+var subtract=(arg1,arg2)=> arg1-arg2;//when only 1 line do this way.
+
+var subtractSync=(arg1,arg2,callback)=>{
+  setTimeout(()=>{
+    callback(arg1-arg2)
+  },1500);
 }
 
 //arrow functions
@@ -102,5 +113,7 @@ module.exports={
   removeNote,
   getNote,
   getNoteAsync,
-  logNote
+  logNote,
+  sumSync,
+  subtractSync
 };
